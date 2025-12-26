@@ -45,7 +45,8 @@ def get_pdf_knowledge():
                 print(f"Error reading {file}: {e}")
     return combined_text
 
-knowledge_base = get_pdf_knowledge()
+# මුල් අකුරු 10,000 ට විතරක් සීමා කරනවා
+knowledge_base = get_pdf_knowledge()[:10000]
 
 # --- 4. පර්සෝනා එක සැකසීම (Ravindu Sir Persona) ---
 persona = f"""
@@ -119,3 +120,4 @@ with st.sidebar:
     if st.button("කක්කා දාල හේදුවා වගේ චැට් එක මකන්න"):
         st.session_state.messages = []
         st.rerun()
+
