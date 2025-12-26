@@ -37,7 +37,8 @@ def get_pdf_knowledge():
             except Exception: continue
     return combined_text
 
-knowledge_base = get_pdf_knowledge()
+# මුල් අකුරු 10,000 ට විතරක් සීමා කරනවා
+knowledge_base = get_pdf_knowledge()[:10000]
 
 # --- Persona ---
 persona = f"""
@@ -90,4 +91,5 @@ if prompt := st.chat_input("මොකක්ද තොපිට තියෙන �
             st.session_state.messages.append({"role": "assistant", "content": full_response})
             
         except Exception as e:
+
             st.error(f"Error එකක් ආවා මල්ලි: {str(e)}")
