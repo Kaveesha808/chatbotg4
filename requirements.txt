@@ -1,0 +1,5 @@
+flask
+streamlit
+groq
+PyPDF2
+gunicorn
